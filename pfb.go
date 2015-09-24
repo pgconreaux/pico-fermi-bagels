@@ -143,13 +143,13 @@ func main() {
 
 			if checkForWin(current) {
 				fmt.Printf("\n *** CONGRATULATIONS!!! YOU GOT IT IN %d GUESSES ***\n\n", numGuesses)
-				fmt.Println()
-				fmt.Println("\nPress 'q' to quit or any other key to play again.")
+				fmt.Print("\nType 'q' to quit or any other key to play again and press enter: ")
 				var response string
 				_, err := fmt.Scanf("%s", &response)
 				if (err != nil && err.Error() != "unexpected newline") || strings.HasPrefix(strings.ToLower(response), "q") {
 					os.Exit(0)
 				} else {
+					fmt.Println()
 					break
 				}
 			}
